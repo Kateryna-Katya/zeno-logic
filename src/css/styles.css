@@ -377,3 +377,113 @@ a {
         opacity: 0;
     }
 }
+/* --- About Section --- */
+.about {
+    padding: 120px 0;
+    position: relative;
+    background: var(--color-dark);
+}
+
+.about__head {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+}
+
+.sub-title {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-desc {
+    color: var(--color-text);
+    font-size: 1.1rem;
+}
+
+/* Grid & Cards */
+.about__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.about-card {
+    position: relative;
+    padding: 50px 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    overflow: hidden;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(56, 189, 248, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.about-card__icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(56, 189, 248, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    color: var(--color-accent);
+}
+
+.about-card__icon i {
+    width: 30px;
+    height: 30px;
+}
+
+.about-card__title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--color-white);
+}
+
+.about-card__text {
+    color: var(--color-text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.about-card__bg {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.about-card:hover .about-card__bg {
+    transform: scale(1.5);
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+}

@@ -62,4 +62,32 @@ gsap.from('.hero__btns', {
     ease: "power3.out",
     delay: 1.4
 });
+    // Регистрация плагина ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+// Анимация появления заголовка секции About
+gsap.from('.about__head > *', {
+    scrollTrigger: {
+        trigger: '.about',
+        start: 'top 80%',
+    },
+    opacity: 0,
+    y: 30,
+    stagger: 0.2,
+    duration: 1,
+    ease: "power2.out"
+});
+
+// Анимация появления карточек
+gsap.from('.about-card', {
+    scrollTrigger: {
+        trigger: '.about__grid',
+        start: 'top 85%',
+    },
+    opacity: 0,
+    y: 50,
+    stagger: 0.15,
+    duration: 1,
+    ease: "back.out(1.7)"
+});
 });
