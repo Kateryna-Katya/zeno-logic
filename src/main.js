@@ -90,4 +90,91 @@ gsap.from('.about-card', {
     duration: 1,
     ease: "back.out(1.7)"
 });
+    // Горизонтальный скролл для преимуществ
+if (window.innerWidth > 992) {
+    const wrapper = document.querySelector('.advantages__wrapper');
+    const cards = document.querySelectorAll('.adv-card');
+    
+    gsap.to(wrapper, {
+        x: () => -(wrapper.scrollWidth - window.innerWidth + window.innerWidth * 0.1),
+        ease: "none",
+        scrollTrigger: {
+            trigger: ".advantages",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1,
+            pin: true,
+            invalidateOnRefresh: true,
+        }
+    });
+
+    // Легкая анимация появления самих карточек внутри скролла
+    cards.forEach((card, i) => {
+        gsap.from(card, {
+            opacity: 0,
+            scale: 0.9,
+            x: 100,
+            duration: 1,
+            scrollTrigger: {
+                trigger: card,
+                containerAnimation: gsap.getById("horizontalScroll"), // Если задавать ID, но scrub справится сам
+                start: "left center",
+            }
+        });
+    });
+    }
+    // Аккордеон курсов
+const courseItems = document.querySelectorAll('.course-item');
+const coursesGlow = document.querySelector('.courses__bg-glow');
+
+courseItems.forEach(item => {
+    const header = item.querySelector('.course-item__header');
+    
+    header.addEventListener('click', () => {
+        // Убираем active у всех
+        const isActive = item.classList.contains('active');
+        
+        courseItems.forEach(i => i.classList.remove('active'));
+        
+        // Если не был активен — открываем
+        if (!isActive) {
+            item.classList.add('active');
+            
+            // Меняем цвет свечения фона
+            const newColor = item.getAttribute('data-color');
+            if (coursesGlow) {
+                coursesGlow.style.background = `radial-gradient(circle, ${newColor} 0%, transparent 70%)`;
+            }
+        }
+    });
+});
+    // В начало файла (или перед использованием) добавьте загрузку скрипта
+const script = document.createElement('script');
+script.src = "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js";
+document.head.appendChild(script);
+
+script.onload = () => {
+    // Инициализация Swiper
+    const blogSwiper = new Swiper('.blog-slider', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar',
+        },
+        navigation: {
+            nextEl: '.blog-next',
+            prevEl: '.blog-prev',
+        },
+        breakpoints: {
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
+        }
+    });
+};
 });
