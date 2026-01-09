@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZenoLogic | IT-Школа нового поколения</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='none' stroke='%2338bdf8' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%2338bdf8'/%3E%3Cpath d='M16 2v6M16 24v6M2 16h6M24 16h6' stroke='%23818cf8' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./css/styles.css" />
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+  <body>
+    <load
+      src="./partials/header.html"
+/>
+
+<main>
+  <section class="pages">
+    <div class="container">
+      <h1>Политика использования <span class="text-gradient">файлов cookie</span></h1>
+
+      <div class="pages__content">
+        <p>
+          Добро пожаловать в <strong>Zeno-Logic</strong>! Чтобы улучшить ваш опыт взаимодействия с нашей образовательной
+          платформой, обеспечить её корректную работу и анализировать активность пользователей, мы используем файлы
+          cookie и схожие технологии. Настоящая политика подробно объясняет, какие именно технологии мы применяем, для
+          каких целей, и как вы можете ими управлять в рамках законодательства ЕС (GDPR).
+        </p>
+
+        <h2>Что такое файлы cookie?</h2>
+        <p>
+          Файл cookie — это небольшой фрагмент данных (текстовый файл), который веб-сайт сохраняет на вашем устройстве,
+          когда вы его посещаете. Это позволяет Zeno-Logic "помнить" ваши действия и предпочтения (например, выбранный
+          курс, язык или регион) в течение определенного времени, чтобы вам не приходилось вводить их повторно.
+        </p>
+
+        <h2>Какие типы файлов cookie мы используем?</h2>
+        <p>Мы классифицируем файлы cookie на нашем сайте по следующим категориям:</p>
+        <ul>
+          <li>
+            <strong>Строго необходимые файлы cookie:</strong> Критически важны для функционирования IT-школы. Они
+            обеспечивают доступ к защищенным разделам и базовым функциям платформы.
+          </li>
+          <li>
+            <strong>Аналитические файлы cookie:</strong> Собирают анонимную информацию о том, как студенты используют
+            сайт. Это помогает нам оптимизировать образовательный процесс.
+          </li>
+          <li>
+            <strong>Функциональные файлы cookie:</strong> Позволяют запоминать ваш выбор для предоставления более
+            персонализированного опыта обучения.
+          </li>
+          <li>
+            <strong>Маркетинговые файлы cookie:</strong> Используются для показа релевантных предложений по курсам,
+            которые могут быть вам интересны.
+          </li>
+        </ul>
+
+        <h2>Ваш выбор и управление</h2>
+        <p>
+          Вы имеете полный контроль над файлами cookie. Вы можете в любой момент изменить настройки в вашем браузере.
+          Однако обратите внимание: отключение строго необходимых cookie может привести к некорректной работе личного
+          кабинета или доступа к учебным материалам.
+        </p>
+
+        <h2>Обновления политики</h2>
+        <p>
+          Мы можем время от времени обновлять эту Политику, чтобы отразить изменения в технологиях или законодательстве
+          Германии и ЕС. Продолжение использования платформы после внесения изменений означает ваше согласие с ними.
+        </p>
+
+        <h2>Контактная информация</h2>
+        <p>
+          Если у вас возникли вопросы касательно нашей политики, пожалуйста, свяжитесь с нами:
+          <br>
+          <a href="mailto:hello@zeno-logic.blog" class="pages__link">hello@zeno-logic.blog</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+    <load src="./partials/footer.html" />
+    <div id="cookie-popup" class="cookie-popup">
+      <div class="cookie-popup__content">
+        <div class="cookie-popup__icon"><i data-lucide="cookie"></i></div>
+        <p class="cookie-popup__text">
+          Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="./cookies.html">Cookie
+            политике</a>.
+        </p>
+        <button id="cookie-accept" class="btn btn--primary btn--sm">Принять</button>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/split-type" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script type="module" src="./main.js"></script>
+    </body>
