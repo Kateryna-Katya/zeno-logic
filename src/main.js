@@ -21,4 +21,45 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.background = 'rgba(15, 23, 42, 0.8)';
         }
     });
+    // Интерактивный свет за мышью
+const glow = document.querySelector('.hero__glow');
+window.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+    gsap.to(glow, {
+        x: x - 300,
+        y: y - 300,
+        duration: 2,
+        ease: "power2.out"
+    });
+});
+
+// Анимация текста Hero
+const heroTitle = new SplitType('.hero__title', { types: 'chars' });
+
+gsap.from(heroTitle.chars, {
+    opacity: 0,
+    y: 100,
+    rotateX: -90,
+    stagger: 0.02,
+    duration: 1.5,
+    ease: "expo.out",
+    delay: 0.5
+});
+
+gsap.from('.hero__text', {
+    opacity: 0,
+    y: 20,
+    duration: 1,
+    ease: "power3.out",
+    delay: 1.2
+});
+
+gsap.from('.hero__btns', {
+    opacity: 0,
+    y: 20,
+    duration: 1,
+    ease: "power3.out",
+    delay: 1.4
+});
 });
